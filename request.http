@@ -1,0 +1,79 @@
+### Create Data Users (POST)
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "ini untuk dihapus",
+  "email": "ini@gmail.com",
+  "password": "123iniii",
+  "profile": {
+    "identityType": "SIM",
+    "identityNumber": "48759213002",
+    "address": "Semarang, Jawa Tengah"
+  }
+}
+
+### Get All Users
+GET http://localhost:3000/api/v1/users
+
+### Get All Users with Pagination
+GET http://localhost:3000/api/v1/users?limit=1&page=2
+
+### Get User Details by Id
+GET http://localhost:3000/api/v1/users/1
+
+### Update User
+PUT http://localhost:3000/api/v1/users/3
+Content-Type: application/json
+
+{
+  "name": "Rifqi Update",
+  "email": "rifqiupdate@gmail.com",
+  "password": "123rifqiupdate",
+  "profile": {
+    "identityType": "SIM",
+    "identityNumber": "48759213002",
+    "address": "Semarang, Jawa Tengah"
+  }
+}
+
+
+### Create New Bank Account
+POST http://localhost:3000/api/v1/accounts
+Content-Type: application/json
+
+{
+    "bankName" : "BNI",
+    "bankAccountNumber" : "56823001",
+    "balance" : 5000000,
+    "userId" : 1
+}
+
+### Get All Bank Accounts
+GET http://localhost:3000/api/v1/accounts
+
+### Get All Bank Accounts with Pagination
+GET http://localhost:3000/api/v1/accounts?limit=1&page=2
+
+### Get Bank Account Details by Id
+GET http://localhost:3000/api/v1/accounts/1
+
+
+### Create Transaction
+POST http://localhost:3000/api/v1/transactions
+Content-Type: application/json
+
+{
+    "amount" : 100000,
+    "sourceAccountId" : 1,
+    "destinationAccountId" : 2
+}
+
+### Get All Transactions
+GET http://localhost:3000/api/v1/transactions
+
+### Get All Transactions with Pagination
+GET http://localhost:3000/api/v1/transactions?limit=1&page=2
+
+### Get Transaction Details by Id
+GET http://localhost:3000/api/v1/transactions/1
